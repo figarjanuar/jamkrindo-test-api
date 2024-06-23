@@ -1,0 +1,31 @@
+CREATE DATABASE `db_aplikasi` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+-- db_aplikasi.klaim_per_lob definition
+CREATE TABLE `klaim_per_lob` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `lob` varchar(50) NOT NULL,
+  `penyebab_klaim` varchar(100) NOT NULL,
+  `periode` date NOT NULL,
+  `nilai_beban_klaim` decimal(15,2) NOT NULL,
+  `is_backup` tinyint NOT NULL DEFAULT '0',
+  `jumlah_nasabah` int NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+-- db_aplikasi.log_aktivitas definition
+CREATE TABLE `log_aktivitas` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `tanggal_proses` datetime NOT NULL,
+  `jumlah_data_dikirim` int NOT NULL,
+  `keterangan` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE DATABASE `db_penampungan` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+-- db_penampungan.rekap_klaim definition
+CREATE TABLE `rekap_klaim` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `lob` varchar(50) NOT NULL,
+  `penyebab_klaim` varchar(100) NOT NULL,
+  `periode` date NOT NULL,
+  `nilai_beban_klaim` decimal(15,2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
